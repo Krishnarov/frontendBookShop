@@ -2,33 +2,21 @@ import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-// import list from "../../public/list.json";
+import list from "../json/list.json";
 import Cards from "./cards";
-import axios from "axios";
+
 function Freebook() {
   const [freebook,setFreebook]=useState([])
 
   useEffect(()=>{
-    const freebook_get=async()=>{
-      try{
-        const res=await axios.get("http://localhost:4001/book")
-        setFreebook(res.data.filter((i)=>i.category==='Free'));
-        // console.log(freebook);
-        
-        
-      }
-      catch (error){
-        console.log("error :",error);
-        
-      }
-    }
-    freebook_get()
+    setFreebook(list.filter((i)=>i.type==='Free'));
   },[])
+
   // const filterlist = list.filter((data) => data.category === "Free");
 
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -71,7 +59,7 @@ function Freebook() {
             corporis nulla non suscipit, iure neque earum?
           </p>
         </div>
-        <div>
+        <div className="py-8">
         <Slider {...settings}>
           {freebook.map((item) => (
             <Cards items={item} key={item.id} />

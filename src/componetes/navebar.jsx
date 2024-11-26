@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Login from "./login";
-import { useauth } from "../context/Authprovider";
+
 import Logout from "./logout";
+import { useNavigate } from "react-router-dom";
 
 function Navebar() {
-  const [authuser, setauthuser] = useauth();
-  console.log(authuser);
-
+  const navegate = useNavigate();
+  const activeUser =JSON.parse(localStorage.getItem("User"));
   const navitem = (
     <>
       <li>
-        <a href="/">Home</a>
+        <div onClick={() => navegate("/")}>Home</div>
       </li>
       <li>
-        <a href="course/">Course</a>
+        <div onClick={() => navegate("/course")}>Course</div>
+      </li>
+        {activeUser && 
+      <li>
+        <div onClick={() => navegate("/MyBooks")}>My Books</div>
+      </li>
+      }
+      {/* <li>
+        <div onClick={() => navegate("/Contact")}>Contact</div>
       </li>
       <li>
-        <a>Contact</a>
-      </li>
-      <li>
-        <a>About</a>
-      </li>
+        <div onClick={() => navegate("/About")}>About</div>
+      </li> */}
     </>
   );
   const [theme, setTheme] = useState(
@@ -45,10 +50,8 @@ function Navebar() {
     const hendelscroll = () => {
       if (window.scrollY > 0) {
         setSticky(true);
-        // console.log('yes');
       } else {
         setSticky(false);
-        // console.log('no');
       }
     };
     window.addEventListener("scroll", hendelscroll);
@@ -56,6 +59,8 @@ function Navebar() {
       window.removeEventListener("scroll", hendelscroll);
     };
   }, []);
+
+  
   return (
     <>
       <div
@@ -95,7 +100,7 @@ function Navebar() {
                 {navitem}
               </ul>
             </div>
-            <a className="font-bold text-xl cursor-pointer">Books Shop</a>
+            <a className="font-bold text-xl cursor-pointer">{activeUser? activeUser.fullname:"Books Shop"}</a>
           </div>
           <div className="navbar-end space-x-3">
             <div className="navbar-center hidden lg:flex">
@@ -153,7 +158,7 @@ function Navebar() {
               </label>
             </div>
 
-            {authuser ? (
+            {activeUser ? (
               <Logout />
             ) : (
               <div>

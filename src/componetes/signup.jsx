@@ -1,50 +1,34 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Login from "./login";
-import axios from "axios";
+
 import toast from "react-hot-toast";
 function Signup() {
   const [fullname, setfullname] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const location=useLocation();
-  const from=location.state?.from?.pathname || '/';
-  const navigate=useNavigate()
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
   const submitData = async (i) => {
     i.preventDefault();
-    const data = { fullname, mobile, email, password };
-    // console.log(data.email);
-    const userinfo = {
-      fullname: data.fullname,
-      email: data.email,
-      mobile: data.mobile,
-      password: data.password,
-    };
+    const userinfo = { fullname, mobile, email, password };
 
-
-      try {
-        const res=await axios.post('http://localhost:4001/user/signup',userinfo);
-        localStorage.setItem('User',JSON.stringify(res.data.user));
-        if(res.status===201){
-          // alert('signup successfull ')
-          toast.success('signup Successfully created!');
-          navigate(from,{replace:true});
-          window.location.reload();
-        }
-        
-        
-      } catch (error) {
-        if(error.response){
-
-          toast.error('error : '+error.response.data.message);
-
-
-        }else{
-          toast.error('Error: Something went wrong. Please try again.');
-        }
-      }
-
+    // const fileData = JSON.stringify(userinfo, null, 2);
+    
+    // const blob = new Blob([fileData], { type: "application/json" });
+    // const url = URL.createObjectURL(blob);
+    // const link = document.createElement("a");
+    // link.href = url;
+    // link.download = "user.json";
+    // link.click();
+    // URL.revokeObjectURL(url);
+    
+    localStorage.setItem('User',JSON.stringify(userinfo));
+    toast.success("signup Successfully created!");
+    navigate(from, { replace: true });
+    // window.location.reload();
   };
 
   return (

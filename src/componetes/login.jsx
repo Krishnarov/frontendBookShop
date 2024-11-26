@@ -1,54 +1,31 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import user from "../json/user.json"
+import toast from "react-hot-toast";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navegat=useNavigate()
+  // localStorage.clear("User")
   const submitData = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-    const data = { email, password };
-    console.log(data);
-    // You can add your login logic here (e.g., API call)
-    const userinfo = {
-      email: data.email,
-      password: data.password,
-    };
-    try {
-      const res = await axios.post(
-        "http://localhost:4001/user/login",
-        userinfo
-      );
-      // console.log('login res data ;'+res);
-      // console.log(JSON.stringify(res.data));
+    e.preventDefault(); 
 
-      if (res.data) {
-        document.getElementById("my_modal_3")?.close()
-        Swal.fire({
-          title: "Log in",
-          text: "You clicked the button!",
-          icon: "success",
-        });
-        
-        localStorage.setItem('User',JSON.stringify(res.data.user))
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
-        // alert('login successfull')
-      } else {
-        alert(res.status);
-      }
-    } catch (error) {
-      // alert(error.response.data.message);
-      // console.log();
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: error.response.data.message,
-      });
+
+    if(email===user.email && password===user.password){
+      document.getElementById("my_modal_3")?.close()
+      localStorage.setItem('User',JSON.stringify(user))
+      toast.success("Loggd in successfull");
+      navegat('/')
+      
+    }else{
+
+      toast.error("Credential error");
     }
+
+   
   };
 
   return (

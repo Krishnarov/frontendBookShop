@@ -1,0 +1,79 @@
+[
+    {
+        "id":1,
+        "name":"Horror Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"Sports",
+        "type":"Free",
+        "author":"Krishna",
+        "books":"images/Royal.pdf",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1726176957~exp=1726180557~hmac=578f9c22f0c26726c902f742fee96a471972fe598531723a13b9005615198f12&w=740"
+    },
+    {
+        "id":2,
+        "name":"Story Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":30,
+        "category":"Sports",
+        "type":"30",
+        "books":"images/Royal.pdf",
+        "author":"Krishna",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1726176957~exp=1726180557~hmac=578f9c22f0c26726c902f742fee96a471972fe598531723a13b9005615198f12&w=740"
+    },
+    {
+        "id":3,
+        "name":"Sports Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":50,
+        "category":"Sports",
+        "type":"50",
+        "author":"Krishna",
+        "books":"images/Royal.pdf",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1726176957~exp=1726180557~hmac=578f9c22f0c26726c902f742fee96a471972fe598531723a13b9005615198f12&w=740"
+    },
+    {
+        "id":4,
+        "name":"Story Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"story",
+        "type":"Free",
+        "author":"Krishna",
+        "books":"images/Royal.pdf",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1726176957~exp=1726180557~hmac=578f9c22f0c26726c902f742fee96a471972fe598531723a13b9005615198f12&w=740"
+    },
+    {
+        "id":5,
+        "name":"Story Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":0,
+        "category":"story",
+        "type":"Free",
+        "author":"Krishna",
+        "books":"images/Royal.pdf",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1726176957~exp=1726180557~hmac=578f9c22f0c26726c902f742fee96a471972fe598531723a13b9005615198f12&w=740"
+    },
+    {
+        "id":6,
+        "name":"comedy Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":20,
+        "category":"Entertenment",
+        "type":"20",
+        "author":"Krishna",
+        "books":"images/Royal.pdf",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1726176957~exp=1726180557~hmac=578f9c22f0c26726c902f742fee96a471972fe598531723a13b9005615198f12&w=740"
+    },
+    {
+        "id":7,
+        "name":"Music Book",
+        "title":"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price":40,
+        "category":"Song",
+        "type":"40",
+        "author":"Krishna",
+        "books":"images/Royal.pdf",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1726176957~exp=1726180557~hmac=578f9c22f0c26726c902f742fee96a471972fe598531723a13b9005615198f12&w=740"
+    }
+]
