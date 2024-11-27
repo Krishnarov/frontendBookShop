@@ -8,7 +8,7 @@ function MyBooks() {
   return (
     <div>
       <Navebar />
-      <div className="min-h-[500px] mt-20">
+      <div className="min-h-[500px] pt-12">
         <div className="mt-6 my-3 px-3 flex">
           <div className="card bg-base-100 w-80 shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:border dark:text-white ">
             <figure>

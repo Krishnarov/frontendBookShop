@@ -14,18 +14,7 @@ function Signup() {
   const submitData = async (i) => {
     i.preventDefault();
     const userinfo = { fullname, mobile, email, password };
-
-    // const fileData = JSON.stringify(userinfo, null, 2);
-    
-    // const blob = new Blob([fileData], { type: "application/json" });
-    // const url = URL.createObjectURL(blob);
-    // const link = document.createElement("a");
-    // link.href = url;
-    // link.download = "user.json";
-    // link.click();
-    // URL.revokeObjectURL(url);
-    
-    localStorage.setItem('User',JSON.stringify(userinfo));
+    localStorage.setItem("User", JSON.stringify(userinfo));
     toast.success("signup Successfully created!");
     navigate(from, { replace: true });
     // window.location.reload();
@@ -36,7 +25,7 @@ function Signup() {
       <div className=" flex justify-center items-center h-screen dark:bg-slate-700 dark:text-white">
         <div className="modal-box dark:bg-slate-900">
           <form onSubmit={submitData}>
-            {/* if there is a button in for, it will close the modal */}
+
             <Link
               className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
               to="/"

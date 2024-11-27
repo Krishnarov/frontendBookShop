@@ -5,11 +5,10 @@ import Swal from "sweetalert2";
 import user from "../json/user.json"
 import toast from "react-hot-toast";
 
-function Login() {
+function Login({getusers}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navegat=useNavigate()
-  // localStorage.clear("User")
   const submitData = async (e) => {
     e.preventDefault(); 
 
@@ -18,8 +17,8 @@ function Login() {
       document.getElementById("my_modal_3")?.close()
       localStorage.setItem('User',JSON.stringify(user))
       toast.success("Loggd in successfull");
+      getusers()
       navegat('/')
-      
     }else{
 
       toast.error("Credential error");

@@ -4,10 +4,10 @@ import Banner from "../componetes/banner";
 import Freebook from "../componetes/freebook";
 import Footer from "../componetes/footer";
 
-function Home() {
+function Home({getusers}) {
   return (
     <>
-      <Navebar />
+      <Navebar getuser={getusers} />
       <Banner />
       <Freebook />
       <Footer />
